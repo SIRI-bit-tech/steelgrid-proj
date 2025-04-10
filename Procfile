@@ -1,0 +1,1 @@
+web: gunicorn steelgrid.wsgi:application --log-file - 

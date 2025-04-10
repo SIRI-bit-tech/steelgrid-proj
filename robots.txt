@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /accounts/
+Disallow: /media/private/
+
+# Sitemaps
+Sitemap: https://www.steelgridsystems.com/sitemap.xml 

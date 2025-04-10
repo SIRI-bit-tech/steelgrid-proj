@@ -1,0 +1,180 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Our Services - SteelGrid Systems{% endblock %}
+
+{% block content %}
+<!-- Services Hero -->
+<section class="hero" style="min-height: 60vh;">
+    <div class="container">
+        <div class="row align-items-center hero-content">
+            <div class="col-lg-8" data-aos="fade-right">
+                <h1 class="display-3 fw-bold mb-4">Our Services</h1>
+                <p class="lead mb-4">Comprehensive engineering solutions tailored to meet your industrial needs with precision and innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|multiply:100 }}">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <i class="{{ service.icon }}"></i>
+                        <h3 class="h4 mb-3">{{ service.title }}</h3>
+                        <p class="text-secondary mb-4">{{ service.short_description }}</p>
+                        <div class="service-description">
+                            {{ service.description|safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-4 mb-5" data-aos="fade-up">Our Process</h2>
+        <div class="row g-4">
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="process-step mb-4">
+                            <span class="display-4 fw-bold text-primary">01</span>
+                        </div>
+                        <h3 class="h5 mb-3">Consultation</h3>
+                        <p>Initial meeting to understand your requirements and project scope.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="process-step mb-4">
+                            <span class="display-4 fw-bold text-primary">02</span>
+                        </div>
+                        <h3 class="h5 mb-3">Planning</h3>
+                        <p>Detailed project planning and resource allocation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="process-step mb-4">
+                            <span class="display-4 fw-bold text-primary">03</span>
+                        </div>
+                        <h3 class="h5 mb-3">Execution</h3>
+                        <p>Implementation with regular progress updates and quality checks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="process-step mb-4">
+                            <span class="display-4 fw-bold text-primary">04</span>
+                        </div>
+                        <h3 class="h5 mb-3">Delivery</h3>
+                        <p>Final testing, handover, and ongoing support as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Industries Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center display-4 mb-5" data-aos="fade-up">Industries We Serve</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-industry fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">Manufacturing</h3>
+                        <p>Optimizing production processes and implementing automation solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-solar-panel fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">Energy</h3>
+                        <p>Sustainable energy solutions and power distribution systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-building fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">Construction</h3>
+                        <p>Structural engineering and construction management services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-4 mb-5" data-aos="fade-up">Our Certifications</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-certificate fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">ISO 9001:2015</h3>
+                        <p>Quality Management System</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">ISO 45001:2018</h3>
+                        <p>Occupational Health and Safety</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-leaf fa-3x text-primary mb-4"></i>
+                        <h3 class="h5 mb-3">ISO 14001:2015</h3>
+                        <p>Environmental Management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h2 class="display-4 fw-bold mb-3" data-aos="fade-up">Need Our Services?</h2>
+                <p class="lead mb-0" data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and project estimate.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="{% url 'core:contact' %}" class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

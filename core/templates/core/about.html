@@ -1,0 +1,138 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}About Us - SteelGrid Systems{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="hero" style="min-height: 60vh;">
+    <div class="container">
+        <div class="row align-items-center hero-content">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h1 class="display-3 fw-bold mb-4">About Us</h1>
+                <p class="lead mb-4">Leading the way in industrial engineering solutions with innovation, expertise, and commitment to excellence.</p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="{% static 'core/img/about-hero.jpg' %}" alt="About SteelGrid Systems" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Company Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up">
+                <h2 class="h1 mb-4">Our Story</h2>
+                <p class="lead mb-4">Founded in 2010, SteelGrid Systems has grown from a small engineering firm to a leading provider of comprehensive industrial solutions.</p>
+                <p class="mb-4">We combine decades of industry experience with cutting-edge technology to deliver innovative solutions that meet the evolving needs of our clients. Our commitment to excellence and sustainable practices has earned us a reputation as a trusted partner in the engineering sector.</p>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h2 mb-4">Our Mission</h3>
+                        <p>To deliver innovative and sustainable engineering solutions that drive industrial progress while maintaining the highest standards of safety, quality, and environmental responsibility.</p>
+                        <h3 class="h2 mb-4 mt-5">Our Vision</h3>
+                        <p>To be the global leader in industrial engineering solutions, recognized for our innovation, expertise, and commitment to sustainable development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-4 mb-5" data-aos="fade-up">Our Values</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-medal fa-3x text-primary mb-4"></i>
+                        <h3 class="h4 mb-3">Excellence</h3>
+                        <p>We strive for excellence in every project, maintaining the highest standards of quality and professionalism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-lightbulb fa-3x text-primary mb-4"></i>
+                        <h3 class="h4 mb-3">Innovation</h3>
+                        <p>We embrace innovation and continuously seek new ways to solve complex engineering challenges.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-leaf fa-3x text-primary mb-4"></i>
+                        <h3 class="h4 mb-3">Sustainability</h3>
+                        <p>We are committed to sustainable practices and environmentally responsible engineering solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center display-4 mb-5" data-aos="fade-up">Our Leadership Team</h2>
+        <div class="row g-4">
+            {% for member in team_members %}
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="{{ forloop.counter|multiply:100 }}">
+                <div class="team-member">
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="mb-3">
+                    <h3 class="h5 mb-2">{{ member.name }}</h3>
+                    <p class="text-secondary mb-3">{{ member.position }}</p>
+                    <div class="bio">{{ member.bio|safe }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-3" data-aos="fade-up">
+                <h3 class="display-4 fw-bold mb-2">150+</h3>
+                <p class="lead mb-0">Projects Completed</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="display-4 fw-bold mb-2">50+</h3>
+                <p class="lead mb-0">Expert Engineers</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="display-4 fw-bold mb-2">12+</h3>
+                <p class="lead mb-0">Years Experience</p>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="display-4 fw-bold mb-2">98%</h3>
+                <p class="lead mb-0">Client Satisfaction</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h2 class="display-4 fw-bold mb-3" data-aos="fade-up">Ready to Work Together?</h2>
+                <p class="lead mb-0" data-aos="fade-up" data-aos-delay="100">Let's discuss how we can help with your next project.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="200">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'crispy_forms',
     'crispy_bootstrap5',
-    'compressor',
     'ckeditor',
     'cloudinary',
     'cloudinary_storage',
@@ -130,7 +129,6 @@ STATICFILES_DIRS = [
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 ]
 
 # Media files
@@ -167,17 +165,6 @@ X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-
-# Django Compressor
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
-COMPRESS_ROOT = STATIC_ROOT
-COMPRESS_PRECOMPILERS = ()
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.css_default.CssAbsoluteFilter',
-    'compressor.filters.cssmin.rCSSMinFilter',
-]
-COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
 
 # Whitenoise Configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
